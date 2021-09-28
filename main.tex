@@ -10,7 +10,7 @@ The unique optical properties of the ruby crystal that make it particularly effe
 % Configuration %
 %%%%%%%%%%%%%%%%%
 
-\documentclass[12pt, a4paper, twocolumn]{article}
+\documentclass[11pt, a4paper, twocolumn]{article}
 \usepackage{xurl}
 \usepackage[comma,sort&compress]{natbib}
 \usepackage{abstract}
@@ -23,7 +23,8 @@ The unique optical properties of the ruby crystal that make it particularly effe
 % Any configuration that should be done before the end of the preamble:
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=blue}
-
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\setlength{\columnsep}{24pt}
 \begin{document}
 
 %%%%%%%%%%%%
@@ -45,7 +46,7 @@ The unique optical properties of the ruby crystal that make it particularly effe
 % Article %
 %%%%%%%%%%%
 
-\section{Introduction}
+\section*{Introduction}
 The absorption and fluorescence emission spectra have long been used to identify, characterize, and study materials \cite{BrittanicaSpectroscopy}. In lasing mediums such as ruby, these properties govern its excitation and emission spectra respectively. Studies of ruby absorption typically use a spectrophotometer and measure two broad absorption peaks centered near \SI{410}{\nm} and \SI{550}{\nm} \cite{Esposti,Kusuma,Song}. Devices with high resolution (\SI{0.5}{\nm} slit width) additionally detect a small doublet absorption peak near \SI{694}{\nm}. Song et. al. find absorption peaks at \SI{410}{\nm} and \SI{550}{\nm}, and calculates an absorption coefficient from these values according to Beer-Lambert's law.
 
 The room temperature fluorescence spectrum of ruby has been reported well throughout the early 1900's with a double peak at \SI{692.7}{\nm} and \SI{694.2}{\nm}, corresponding to the characteristic $R_1$ and $R_2$ lines \cite{Kumari, Mani}. With lower resolution instruments, only a single primary peak was detected at \SI{694.2}{\nm} by Esposti et. al. Other fluorescence lines have been detected near these peaks at 671, 688, 695, and \SI{710}{\nm} \cite{Kusuma}.
@@ -60,11 +61,35 @@ The effectiveness of ruby as a lasing medium depends on its ability to maintain 
 
 The fluorescence lifetime of around \SI{3.5}{\ms} is typically reported, but this measurement is dependent on a number of factors. Investigations of the temperature dependence show that lifetime decreases for temperatures above room temperature \cite{Seat, Nelson}. Investigations of the dependence on ruby diameter show an increasing fluorescence lifetime with increased size as emitted photons are reabsorbed more frequently in larger samples \cite{Jones}. The effect of doping concentration changes dramatically with the temperature as found by \cite{Brown}. Brown found that at room temperature, doping concentrations between 0.005\% and 0.1\% yielded lifetimes in the range of 3-\SI{4}{\ms}.
 
-
 Many investigations use a single-exponential fit to obtain the fluorescence lifetime, but others use a double-exponential fit based on the shape of their residuals \cite{McBane, Jones}. There is also some variation on whether a background constant is accounted for, but without it, we found a lifetime further from the typical \SI{3.5}{\ms} and closer to the \SI{4.2}{\ms} reported by Esposti.
+\section*{Results}
+\subsection*{Absorption and Transmission}
+\subsection*{Fluorescence Spectrum}
+R-line fluorescence was initiated in ruby by directing a constant \SI{532}{\nm} green diode laser beam into the crystal. The resulting fluorescent light was captured by a collection lens and directed through a fiber optic cable to the spectrometer for measurement. A black cloth covered the breadboard to eliminate background light.
 
-\section{Section2Title}
-\lipsum[1]
+A white light was shined through the fiber optic to aid in focusing the fluorescence on the fiber optic cable. Additionally, the laser was briefly fired during this adjustment to ensure that the focused white light and laser both struck the ruby at the same location.
+Peak R-Line fluorescence occurred at \SI{693.5\pm1.1}{\nm}, a deep red color. Although in the visible spectrum, the red fluorescent light itself was not visible due to its low intensity, and could only be detected by the spectrograph. The peak observed actually corresponds to a doublet peak at 692.7 and \SI{694.3}{\nm} measured in more precise experiments -  the spectrograph used has limited resolution, resulting in one large peak in between this doublet. Also captured by the spectrograph are smaller peaks on either side of the primary R-line, at \SI{670}{\nm} and \SI{710}{\nm}, corresponding to Neighbor (N) lines and side bands respectively.
+
+The “efficiency” of the emitted light can be approximated from the ratio of the input wavelength to the output, yielding 532/693.5 = 76.7\%. That is, an R-line fluorescence photon has 76.7\% the energy of the green laser photon absorbed from the relation $E = hc/\lambda$. This is consistent with the non-radiative relaxation step of fluorescence that necessitates that the meta-stable state is of lower energy than the initial excited state.
+
+\subsection*{Fluorescence Lifetime}
+
+Important aspects of the fluorescence process were observed by measuring the strength of fluorescence across time for a ruby crystal subjected to a pulsed laser. The diagram below shows an abstracted setup in which the laser is pulsed by a 10 Hz square wave function generator and the ruby fluorescence is captured by a photodiode. An oscilloscope simultaneously records the square wave that pulses the laser and the fluorescence signal captured by the photodiode.
+
+The figure on the right shows one period of the 10 Hz signal recorded on the oscilloscope, with the square wave in blue and the fluorescence in orange. It shows a series of distinct phases outlining the entire process of fluorescence. No fluorescence occurs during the first 0.175 seconds after the laser is fired, indicating a period of laser absorption, chromium excitation, and non-radiative relaxation. The fluorescence rises sharply t = .015 to t = .025, as chromium ions relax back to the ground state. From t = .025 until the laser pulse turns off at t = .05, the rate of fluorescence is saturated, so it does not increase further. Finally, after t = .05, with the laser turned off, fluorescence continues, and the rate of fluorescence decreases exponentially. 
+The rate of this exponential decay is governed by the probability that a given metastable chromium atom will fluoresce and relax in a given period of time. For the period of time chosen, the smaller this probability of decay, the more stable the metastable state is. Using this, the rate of exponential decay can be used to obtain a “decay time” that indicates how stable the R-Line metastable state is.
+
+The fluorescence decay was isolated from the oscilloscope data, and a single exponential fit of the form y = ae-x/+c was applied to determine the time constant for the decay, , for which a value of 3.6 +/- 0.1 ms was obtained. The inclusion of a constant in the fit was important because the photodiode voltage does not decay to 0, but to some background value.
+
+The time constant represents the amount of time for the fluorescence decay rate to decrease to 1/e of its original value, and is equivalent to the fluorescence lifetime. Whereas many materials exhibit fluorescence lifetimes on the order of ns or ps, ruby’s fluorescence lasts multiple milliseconds, and is a significant factor in its effectiveness as a lasing medium.
+
+\section*{Discussion}
+The tests performed concern the optical properties of the ruby crystal sample. The absorption spectrum was found to have peak absorptions at wavelengths of 420 ± 5 nm and 553 ± 1 nm with absorption depths of 15.0 ± 2.2 mm and 8.57 ± 0.08 mm respectively. The transmission and absorption spectra of the ruby were consistent with its visual appearance as a pink translucent crystal. The fluorescence showed a singular clear peak at 693.5 ± 1.1 nm. This range would encompass the double line of the ruby fluorescence spectrum at 692 and 694 nm recorded by (cite source). It also means that the fluorescence has 76.7\% of the energy from the 532nm laser used to excite the ruby. The R-Line fluorescence lifetime was found to be equal to 3.6 ± 0.1 ms.
+
+The results of the experiment would be affected by light from the laboratory if the black cloth used to cover the optic setup were to allow a small amount of light to enter the setup and affect the ruby or spectrometer. Also any dust, oil, or other impurities touching the laser, ruby, spectrometer, or optical component would likewise have changed the measurements and introduced sources of error.
+
+\subsection*{Acknowledgements}
+We would like to thank Nathaniel Avish and Hongwei Chen, for their help in the laboratory and as teaching assistants for the Advanced Physics Laboratory section for which this experiment was introduced. We would also like to thank the Northeastern University Department of Physics for supporting our experience at the conference financially.
 %%%%%%%%%%%%%%
 % References %
 %%%%%%%%%%%%%%
