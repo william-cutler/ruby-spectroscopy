@@ -1,5 +1,5 @@
-\title{Absorption and Fluorescence in Ruby Crystal}
-
+\title{Absorption and Fluorescence of Ruby Crystal}
+\date{}
 \newcommand{\abstractText}{\noindent
 The unique optical properties of the ruby crystal that make it effective as a lasing medium were measured using a simple optical setup. Ruby’s absorption of visible light was shown to be strongest at 420 and 550 nm, corresponding to its physical appearance as transparent pink. While the ruby crystal was illuminated with a 532 nm green laser, the R-line fluorescence peaked at 693.5 $\pm$ 1.1 nm. Finally, the fluorescence lifetime of ruby was measured by pulsing the laser with a signal generator and capturing the decaying fluorescence on a digital oscilloscope using a  photodiode. An exponential decay time-constant of 3.6 $\pm$ 0.1 ms was obtained, corresponding to the fluorescence lifetime. 
 }
@@ -13,10 +13,12 @@ The unique optical properties of the ruby crystal that make it effective as a la
 %% Authors and affiliations
 \usepackage{authblk}
 \author[1]{William Cutler}
-\author[1]{Jack Donaghue}
-\author[1]{Haridas Kumarakuru}
-\author[1]{Don Heiman}
-\affil[1]{\footnotesize{\textit{Department of Physics, Northeastern University, Boston, MA 02115, USA}}}
+\author[1]{John Donaghue}
+\author[1*]{Haridas Kumarakuru}
+\author[1*]{Don Heiman}
+\affil[1]{\small{\textit{Department of Physics, Northeastern University, Boston, MA 02115, USA}}}
+
+\affil[*]{\small{\textit{Corresponding  authors: h.kumarakuru@northeastern.edu, d.heiman@northeastern.edu}}}
 
 \usepackage{xurl}
 \usepackage[comma, sort&compress]{natbib}
@@ -64,7 +66,7 @@ The effectiveness of ruby as a lasing medium is derived from its ability to main
 
 \begin{figure}
 \includegraphics[width=\linewidth]{Population-inversion-3level.png}
-\caption{\textit{Sample energy level diagram showing three phases of fluorescence: pumping, nonradiative relaxation, and fluorescent relaxation.}}
+\caption{\textit{Sample energy level diagram showing three phases of fluorescence: pumping, nonradiative relaxation, and fluorescent relaxation \cite{3levelDiagram}.}}
 \label{fig:Population-inversion-3level}
 \end{figure}
 
@@ -76,13 +78,13 @@ Many investigations use a single exponential fit to obtain the fluorescence life
 
 The apparatus and procedure for this investigation is based on \cite{Heiman}. A diagram of the optical setup is shown in Figure \ref{fig:laserBenchDiagram}, and the ruby crystal itself in Figure \ref{fig:rubyPhoto}. The ruby sample used was approximately 0.05\% Cr. For absorption measurements, white light from a Maglite was sent onto the crystal, and the transmitted light was captured by a fiber optic, which was then sent to the spectrometer, an OceanOptics USB 2000 \cite{SpectrometerData}. The ruby mount was not fixed to the table, so that it could be moved out of the path of the white light in order to capture the unabsorbed light. A black cloth ensured no interference from background room light. Note that the flashlight must have a wide-spectrum incandescent bulb rather than a narrow-band LED.
 
-\begin{figure}
+\begin{figure} [t]
 \includegraphics[width=\linewidth]{laserBenchDiagram.png}
 \caption{\textit{Diagram of fluorescence spectrum measurement setup showing the laser beam in green and R-line fluorescence in red \cite{Heiman}.}}
 \label{fig:laserBenchDiagram}
 \end{figure}
 
-\begin{figure} %[]
+\begin{figure} [H]
 \includegraphics[width=\linewidth]{rubyPhoto.png}
 \caption{\textit{Photograph of the transparent pink ruby crystal used throughout this study. The laser and white light were directed to the top part of the crystal, above the metal stand.}}
 \label{fig:rubyPhoto}
@@ -101,35 +103,36 @@ The transmittance of a material, $T$, is simply the fraction of incident light p
     T=I/I_0. 
 \end{equation}
 
-$I$ represents the transmitted intensity and $I_0$ is the incident intensity measured from the unobstructed Maglite. Figure \ref{fig:doubleIntensityMeasurement} shows the spectra of $I$ and $I_0$. Note that there is a larger difference in intensity in the 500-600 nm region, indicating a minimum in the transmission spectrum corresponding to an absorption peak. These extrema can be observed in Figures \ref{fig:transmissionSpectrum} and \ref{fig:absorptionSpectrumFocused},  respectively.
+$I$ represents the transmitted intensity and $I_0$ is the incident intensity measured from the unobstructed Maglite. Figure \ref{fig:doubleIntensityMeasurement} shows the spectra of $I$ and $I_0$. Note that although there is a difference in intensities for all wavelengths, the pronounced difference in intensity in the 500-600 nm region indicates a minimum in the transmission spectrum corresponding to an absorption peak. These extrema can be observed in Figures \ref{fig:transmissionSpectrum} and \ref{fig:absorptionSpectrumFocused},  respectively. It is also worth noting that these measurements resulted from white light that was too weak to stimulate any measurable fluorescence.
 
 \begin{figure} %[]
 \includegraphics[width=\linewidth]{doubleIntensityMeasurement.pdf}
-\caption{\textit{Spectrum of intensities for bare white light (blue line), and transmitted white light (orange line) after passing through ruby.}}
+\caption{\textit{Spectrum of intensities for incident bare white light (blue curve) and transmitted white light (red curve) after passing through the ruby crystal.}}
 \label{fig:doubleIntensityMeasurement}
 \end{figure}
 
-\begin{figure} %[H]
+\begin{figure} [t]
 \includegraphics[width=\linewidth]{transmissionSpectrum.pdf}
-\caption{\textit{Transmission spectrum of the ruby crystal showing prominent minima at 420 nm and 550 nm.}}
+\caption{\textit{Transmission spectrum of the ruby crystal showing minima at 420 nm and 550 nm.}}
 \label{fig:transmissionSpectrum}
 \end{figure}
 
 In order to convert the transmission spectrum into an absorption spectrum, the reflection losses from the surfaces must be taken into account. The reflectivity of the ruby is given by the formula below, and represents the proportion of incident light reflected at one ruby-air interface:
+\setlength{\abovedisplayskip}{8pt}
+\setlength{\belowdisplayskip}{8pt}
 
 \begin{equation} \label{eq2}
     R=\frac{(n-1)^2}{(n+1)^2},
 \end{equation}
 
-where $n$ is the refractive index of ruby. 
-
-The absorption coefficient, $\alpha$, which governs the rate of the exponential decay of light intensity as it travels along the length of the material, was calculated using Equation \ref{eq3} as derived from Beer-Lambert's law \cite{BeerLambert}.
-
+where $n$ is the refractive index of ruby. The absorption coefficient $\alpha$ governs the rate of exponential decay of light intensity as it travels along the length of the material. It was calculated using Eq. \ref{eq3} as derived from Beer-Lambert's law \cite{BeerLambert}.
+\setlength{\abovedisplayskip}{8pt}
+\setlength{\belowdisplayskip}{8pt}
 \begin{equation}\label{eq3}
    \alpha = \frac{1}{L}\ln(\frac{I_0}{I}(1-R)^2),
 \end{equation}
 
-$L$ is the length of the ruby measured along the path of the light passing through it (thickness). Below are the relevant quantities used for calculating the absorption coefficient:
+where $L$ is the length of the ruby measured along the path of the light passing through it (thickness). Below are the relevant quantities used for calculating the absorption coefficient:
 \\\\
 \begin{tabular}{ll}
 \textbf{Index of Refraction} & 1.76 ± 0.02 \cite{rubyRefraction}    \\
@@ -143,7 +146,7 @@ $L$ is the length of the ruby measured along the path of the light passing throu
 % \label{fig:intensities}
 % \end{figure}
 
-\begin{figure}[]
+\begin{figure}[H]
 \includegraphics[width=\linewidth]{absorptionSpectrumFocused.pdf}
 \caption{\textit{Absorption spectrum of the ruby crystal showing two broad absorption peaks centered at 410 nm and 550 nm.}}
 \label{fig:absorptionSpectrumFocused}
@@ -170,55 +173,57 @@ Peak R-line fluorescence occurred at 693.5 nm, the deep red color emitted by a r
 \label{fig:fluorescenceSpectrum}
 \end{figure}
 
-\subsection*{Fluorescence Lifetime}
-Important aspects of the fluorescence process were observed by measuring the strength of fluorescence across time for a ruby crystal subjected to a pulsed laser. The diagram in Figure \ref{fig:decayMeasurementSchematic} illustrates the setup and signal paths. The laser was pulsed by a 10-Hz square-wave function generator and the ruby fluorescence was captured by a photo-diode. Meanwhile, the two-channel oscilloscope simultaneously recorded the square wave that pulsed the laser (orange arrow) and the fluorescence signal captured by the photodiode (blue arrow). A photograph of the optical bench for this process is shown in Figure \ref{fig:laserBenchPhoto}.
 
-\begin{figure}[H]
+
+\subsection*{Fluorescence Lifetime}
+Important aspects of the fluorescence process were observed by measuring the strength of fluorescence across time for a ruby crystal subjected to a pulsed laser. The diagram in Figure \ref{fig:decayMeasurementSchematic} illustrates the setup and signal paths. The laser was pulsed by a 10-Hz square-wave function generator, and the ruby fluorescence was captured by a photodiode. Meanwhile, the two-channel oscilloscope simultaneously recorded the square wave that pulsed the laser (blue arrow) and the fluorescence signal captured by the photodiode (orange arrow). A photograph of the optical bench for this process is shown in Figure \ref{fig:laserBenchPhoto}.
+
+\begin{figure}[]
 \includegraphics[width=\linewidth]{decayMeasurementSchematic.png}
 \caption{\textit{Schematic illustration of fluorescence lifetime measurement showing the square-wave electrical signal of the laser and fluorescence input to the oscilloscope.}}
 \label{fig:decayMeasurementSchematic}
 \end{figure}
 
-\begin{figure} %[]
+\begin{figure} [H]
 \includegraphics[width=\linewidth, height=\linewidth]{laserBenchPhoto.png}
 \caption{\textit{Photograph of laser bench setup for measuring fluorescence lifetime.
 }}
 \label{fig:laserBenchPhoto}
 \end{figure}
 
-One period of the 10-Hz signal captured by the oscilloscope is shown in Figure \ref{fig:fluorescencePeriod}, with the square wave in blue and the fluorescence in orange. It shows a series of distinct phases outlining the entire process of fluorescence. Initially, the fluorescence rises sharply from t = 0.015 to 0.025 s, as excited Cr ions fluoresce back to the ground state. From t = 0.025 s until the laser pulse turns off at \SI{0.05}{\s}, the fluorescence is in saturation, as the rate of emission reaches the rate of excitation. Finally, after \SI{0.05}{\s}, with the laser turned off, fluorescence continues, but its rate decreases exponentially. The rate of this exponential decay is governed by the probability that a given metastable Cr ion will fluoresce and relax in a given period of time. 
+One period captured by the oscilloscope is shown in Figure \ref{fig:fluorescencePeriod}, with the laser pulse in blue and the fluorescence in orange. It shows a series of distinct phases outlining the entire process of fluorescence. Initially, the fluorescence rises sharply from t = 0.015 to 0.025 s, as excited Cr ions fluoresce back to the ground state. From t = 0.025 s until the laser pulse turns off at \SI{0.05}{\s}, the fluorescence is in saturation, as the rate of emission reaches the rate of excitation. Finally, after \SI{0.05}{\s}, with the laser turned off, fluorescence continues, but its rate decreases exponentially. The rate of this exponential decay is governed by the probability that a given metastable Cr ion will fluoresce and relax in a given period of time. 
 
-\begin{figure} %[]
+The fluorescence decay was isolated from the oscilloscope data, and a single exponential fit of the form $y = ae^{-x/\tau} + c$ was applied to determine the fluorescence lifetime $\tau$ = 3.6 ± 0.1 ms, as shown in Figure \ref{fig:decayFit}. The inclusion of a constant in the fit was important because the photodiode voltage decays to a small background value below 0.5 mV.
+
+\begin{figure} [t]
 \includegraphics[width=\linewidth]{fluorescencePeriod.pdf}
-\caption{\textit{Oscilloscope traces for one period of laser pulse at 10 Hz, showing the fluorescence emission in orange and the laser excitation in blue that ends at 0.05 s.}}
+\caption{\textit{Oscilloscope trace of fluorescence measured with a photodiode (orange curve). The blue lines show the laser is on from 0 - 0.05 s.}}
 \label{fig:fluorescencePeriod}
 \end{figure}
 
-The fluorescence decay was isolated from the oscilloscope data, and a single exponential fit of the form $y = ae^{-x/\tau} + c$ was applied to determine the fluorescence lifetime $\tau$ = 3.6 ± 0.1 ms, as shown in Figure \ref{fig:decayFit}. The inclusion of a constant in the fit was important because the photodiode voltage does not decay to 0, but has a small background value below 0.5 mV.
-
-\begin{figure} %[]
+\begin{figure} [t]
 \includegraphics[width=\linewidth]{decayFit.pdf}
 \caption{\textit{R-line fluorescence data as a function of time in blue points. The red curve is a MATLAB fit to the data.}
 }
 \label{fig:decayFit}
 \end{figure}
 
-A single exponential fit is reported here for its simplicity and interpretability. Furthermore, it provided a high correlation ($R^2=0.993$), and its residual plot, shown in Figure \ref{fig:decayResiduals}, has no discernible pattern, unlike those reported by \cite{Jones} in justification of the double exponential. This is not to deny the theoretical relevance of a double exponential in describing the fluorescence process, but rather to demonstrate that the single exponential fits the data remarkably well, beyond mere visual inspection.
+A single exponential fit is reported here for its simplicity and interpretability. It also provided a high correlation ($R^2=0.993$), and its residual plot, shown in Figure \ref{fig:decayResiduals}, has no discernible pattern, unlike those reported by \cite{Jones} to justify a double exponential. This is not to deny the theoretical relevance of a double exponential in describing the fluorescence process, but rather to demonstrate that the single exponential fits the data remarkably well, beyond mere visual inspection.
 
-\begin{figure} %[]
+\begin{figure} [H]
 \includegraphics[width=\linewidth]{decayResiduals.pdf}
 \caption{\textit{Residual plot for the single exponential fit to the ruby fluorescence data in the previous figure, showing no discernible pattern that might indicate a more complex fit is needed.}}
 \label{fig:decayResiduals}
 \end{figure}
-\newpage
+
 The time constant represents the amount of time needed for the fluorescence emission to decrease to $1/e$ of its original value. Whereas many materials exhibit fluorescence lifetimes on the order of nanoseconds or picoseconds, ruby’s fluorescence lasts multiple milliseconds, a significant factor in its effectiveness as a lasing medium.
 
-\section*{Discussion}
+\section*{Conclusion}
 The experiments and analysis performed concern the optical properties of the ruby crystal sample. Peak absorption was observed at wavelengths of 420 ± 5 nm and 553 ± 1 nm with absorption lengths of 15 ± 2 mm and 8.57 ± 0.08 mm, respectively. 
 
 The transmission and absorption spectra of the ruby were consistent with its visual appearance as a transparent pink crystal. The noise in the 420 nm absorption peak (and transmission valley) is due to the low overall intensity of the Maglite seen in Figure \ref{fig:doubleIntensityMeasurement}. Therefore, a light with more intensity in this region would yield a less noisy transmission and absorption spectrum.
 
-The fluorescence showed a singular clear peak at 693.5 ± 1.1 nm. This range would encompass the double line of the ruby fluorescence spectrum at 692 and 694 nm recorded by \cite{Kumari, Mani}. Using a single exponential fit, the R-line fluorescence lifetime was found to be 3.6 ± 0.1 ms.
+The fluorescence showed a singular clear peak at 693.5 ± 1.1 nm. This range would encompass the double line of the ruby fluorescence spectrum at 692.7 and 694.2 nm recorded by \cite{Kumari, Mani}. Using a single exponential fit, the R-line fluorescence lifetime was found to be 3.6 ± 0.1 ms.
 
 \subsection*{Acknowledgements}
 We would like to thank Nathaniel Avish and Hongwei Chen for their help in the laboratory as teaching assistants for the Advanced Physics Laboratory section for which this experiment was introduced. We would also like to thank the Northeastern University Department of Physics for financially supporting our experience at the ASEE-NE 2021 conference.
